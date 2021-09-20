@@ -2,27 +2,48 @@ package Add_two_numbers;
 
 
 public class Solution {
+//    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+//        StringBuilder first = new StringBuilder();
+//        StringBuilder second = new StringBuilder();
+//        while (l1 != null) {
+//            first.insert(0, l1.val);
+//            second.insert(0, l2.val);
+//            l1 = l1.next;
+//            l2 = l2.next;
+//        }
+//
+//        String sum = "" + (Integer.parseInt(first.toString()) + Integer.parseInt(second.toString()));
+//
+//        ListNode previous = new ListNode(Integer.parseInt("" + sum.charAt(0)));
+//        for (int i = 1; i < sum.length(); i++) {
+//            ListNode node = new ListNode(Integer.parseInt("" + sum.charAt(i)));
+//            node.next = previous;
+//            previous = node;
+//        }
+//
+//        return previous;
+//    }
+
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        StringBuilder first = new StringBuilder();
-        StringBuilder second = new StringBuilder();
-        while (l1 != null) {
-            first.insert(0, l1.val);
-            second.insert(0, l2.val);
-            l1 = l1.next;
-            l2 = l2.next;
+        ListNode dummyHead = new ListNode(0);
+        ListNode p = l1, q = l2, curr = dummyHead;
+        int carry = 0;
+        while (p != null || q != null) {
+            int x = (p != null) ? p.val : 0;
+            int y = (q != null) ? q.val : 0;
+            int sum = carry + x + y;
+            carry = sum / 10;
+            curr.next = new ListNode(sum % 10);
+            curr = curr.next;
+            if (p != null) p = p.next;
+            if (q != null) q = q.next;
         }
-
-        String sum = "" + (Integer.parseInt(first.toString()) + Integer.parseInt(second.toString()));
-
-        ListNode previous = new ListNode(Integer.parseInt("" + sum.charAt(0)));
-        for (int i = 1; i < sum.length(); i++) {
-            ListNode node = new ListNode(Integer.parseInt("" + sum.charAt(i)));
-            node.next = previous;
-            previous = node;
+        if (carry > 0) {
+            curr.next = new ListNode(carry);
         }
-
-        return previous;
+        return dummyHead.next;
     }
+
     public static void main(String[] args) {
         ListNode one_1 = new ListNode(2);
         ListNode one_2 = new ListNode(4);
