@@ -1,7 +1,9 @@
+package Two_sum;
+
 import java.util.Arrays;
 import java.util.HashMap;
 
-class TwoSum {
+class Solution {
     public static void main(String[] args) {
         long sum = 21;
         int[] arr = {0, 2, 11, 19, 90};
@@ -23,13 +25,13 @@ class TwoSum {
 
     public static int[] twoSum(int[] nums, long target) {
 
-        HashMap<String, Integer> numbers = new HashMap<String, Integer>();
+        HashMap<String, Integer> numbers = new HashMap<>();
 
         for(int i=0; i<nums.length;i++) {
             numbers.put(Integer.toString(nums[i]),i);
         }
 
-        for(int i=0, place=i; i<nums.length;i++) {
+        for(int i = 0, place; i<nums.length; i++) {
 
             int distance = (int) (target - nums[i]);
 

@@ -1,13 +1,13 @@
 package Add_two_numbers;
 
 
-public class AddTwoNumbers {
+public class Solution {
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        String first = "";
-        String second = "";
+        StringBuilder first = new StringBuilder();
+        StringBuilder second = new StringBuilder();
         while (l1 != null) {
-            first = l1.val + first;
-            second = l2.val + second;
+            first.insert(0, l1.val);
+            second.insert(0, l2.val);
             l1 = l1.next;
             l2 = l2.next;
         }
