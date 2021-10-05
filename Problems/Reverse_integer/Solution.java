@@ -1,9 +1,11 @@
 package Reverse_integer;
 
+
 public class Solution {
     public static void main(String[] args) {
         System.out.println(reverse(2147483647));
     }
+
     public static long reverse(long x) {
         long result =0;
         while(x != 0)

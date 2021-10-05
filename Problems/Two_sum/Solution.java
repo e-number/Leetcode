@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
+
 class Solution {
     public static void main(String[] args) {
         long sum = 21;

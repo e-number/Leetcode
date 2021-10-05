@@ -1,12 +1,12 @@
 package Longest_Substring_Without_Repeating_Characters;
 import java.util.*;
 
+
 public class Solution {
     public static void main(String[] args)
     {
         System.out.println(longestSubstringWithoutRepeatingCharacters("abcabcbb"));
     }
-
 
 //    public static int longestSubstringWithoutRepeatingCharacters(String s) {
 //        int max = 0;
